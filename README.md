@@ -9,6 +9,19 @@ Note that this app requires you to **manually grant permission** to allow the ap
 
 `adb shell pm grant uk.co.nickbutcher.animatordurationtile android.permission.WRITE_SECURE_SETTINGS`
 
+I have included a script to perform the build, installation, and permission grant process for you.
+
+In the home directory:
+```
+./deploy.sh -r
+```
+
+or if the apk has already been built, just run
+
+```
+./deploy.sh
+```
+
 This app also only runs on Nougat+ devices.
 
 👉 **[Download APK](https://github.com/nickbutcher/AnimatorDurationTile/releases)** 👈
