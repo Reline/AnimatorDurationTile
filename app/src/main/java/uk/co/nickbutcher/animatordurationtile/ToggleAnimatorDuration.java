@@ -24,8 +24,8 @@ import static uk.co.nickbutcher.animatordurationtile.AnimatorDurationScaler.getA
 import static uk.co.nickbutcher.animatordurationtile.AnimatorDurationScaler.getIcon;
 
 /**
- * A {@link TileService quick settings tile} for scaling animation durations. Toggles between 1x and
- * 5x animator duration scales.
+ * A {@link TileService quick settings tile} for scaling animation durations. Toggles between off and
+ * 1x animator duration scales.
  */
 public class ToggleAnimatorDuration extends TileService {
 
@@ -40,7 +40,7 @@ public class ToggleAnimatorDuration extends TileService {
     @Override
     public void onClick() {
         final float current = getAnimatorScale(getContentResolver());
-        final float target = current == 1f ? 5f : 1f;
+        final float target = current == 1f ? 0f : 1f;
         AnimatorDurationScaler.setAnimatorScale(this, target);
         updateTile();
     }

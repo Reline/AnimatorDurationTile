@@ -73,8 +73,13 @@ class AnimatorDurationScaler {
             @NonNull Context context,
             @FloatRange(from = 0.0, to = 10.0) float scale) {
         try {
+            ContentResolver contentResolver = context.getContentResolver();
             Settings.Global.putFloat(
-                    context.getContentResolver(), Settings.Global.ANIMATOR_DURATION_SCALE, scale);
+                    contentResolver, Settings.Global.ANIMATOR_DURATION_SCALE, scale);
+            Settings.Global.putFloat(
+                    contentResolver, Settings.Global.WINDOW_ANIMATION_SCALE, scale);
+            Settings.Global.putFloat(
+                    contentResolver, Settings.Global.TRANSITION_ANIMATION_SCALE, scale);
             return true;
         } catch (SecurityException se) {
             String message = context.getString(R.string.permission_required_toast);
